@@ -23,7 +23,7 @@ public class BankEntity
         return qnt;
     }
 
-    public BankEntity mapRequestDTOToEntity(BankRequestDTO requestDto)
+    public static BankEntity mapRequestDTOToEntity(BankRequestDTO requestDto)
     {
         if (requestDto == null)
         {
@@ -37,5 +37,28 @@ public class BankEntity
         bankEntity.setQnt(requestDto.getQnt());
 
         return bankEntity;
+    }
+
+    public static BankResponseDTO mapBankEntityToBankResponseDto(BankEntity bankEntity)
+    {
+        BankResponseDTO bankResponseDto = new BankResponseDTO();
+        if (bankEntity == null)
+        {
+            return null;
+        }
+        bankResponseDto.setId(bankEntity.getId());
+        bankResponseDto.setName(bankEntity.getName());
+        bankResponseDto.setQnt(bankEntity.getQnt());
+
+        return bankResponseDto;
+    }
+
+    @Override
+    public String toString() {
+        return "BankEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", qnt=" + qnt +
+                '}';
     }
 }

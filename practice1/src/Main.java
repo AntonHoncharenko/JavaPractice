@@ -21,7 +21,7 @@ public class Main {
         BankController bankController = new BankController();
         bankController.createBank(requestDTO);
 
-        BankRepository bankRepository = bankController.bankService.bankRepository;
+        BankRepositoryImpl bankRepository = bankController.bankService.bankRepository;
         bankRepository.displayList();
     }
 }
