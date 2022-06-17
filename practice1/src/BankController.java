@@ -1,9 +1,9 @@
 public class BankController
 {
-    BankService bankService;
+    BankServiceImpl bankService;
     public void createBank(BankRequestDTO requestDTO)
     {
-        bankService = new BankService();
+        bankService = new BankServiceImpl();
         bankService.addToRepository(requestDTO);
     }
 }
